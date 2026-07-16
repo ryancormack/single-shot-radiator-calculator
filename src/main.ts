@@ -21,6 +21,8 @@
  * indication while keeping the form rendered (Requirement 6.6).
  */
 
+import './style.css';
+
 import { createStore } from './state/store';
 import { createController } from './state/controller';
 import { renderForm } from './ui/inputForm';

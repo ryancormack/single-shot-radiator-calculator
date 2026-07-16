@@ -1,0 +1,361 @@
+/**
+ * Radiator Heat Calculator — visual design.
+ *
+ * A clean "home heating" theme: a warm amber accent against a neutral light
+ * background, with an optional dark-mode via prefers-color-scheme. This file
+ * is purely presentational — it targets the DOM hooks the components already
+ * produce (#form-root, .input-form, .field, .field-error, #results-root,
+ * .results-display, .result, .result-value, .result-unit, .result-message)
+ * and does not depend on any JS behaviour.
+ */
+
+:root {
+  /* Warm accent palette */
+  --accent: #e8590c;
+  --accent-strong: #d9480f;
+  --accent-soft: #fff4ec;
+  --accent-ring: rgba(232, 89, 12, 0.28);
+
+  /* Neutral surfaces & text */
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --panel-border: #e6e8eb;
+  --text: #1f2328;
+  --text-muted: #6b7280;
+  --text-faint: #9aa1ab;
+
+  /* Feedback */
+  --danger: #d92d20;
+  --danger-soft: #fef3f2;
+  --warn-bg: #fff4e5;
+  --warn-border: #f5c37a;
+  --warn-text: #92400e;
+
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.08);
+  --shadow-soft: 0 1px 2px rgba(16, 24, 40, 0.04), 0 2px 8px rgba(16, 24, 40, 0.05);
+
+  --field-height: 44px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: radial-gradient(
+    1200px 400px at 50% -10%,
+    var(--accent-soft),
+    transparent 60%
+  );
+  min-height: 100vh;
+}
+
+/* ---------- App shell ---------- */
+
+.app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.app-header h1 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.app-header .tagline {
+  margin: 0 auto;
+  max-width: 46ch;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Small accent flourish under the title */
+.app-header h1::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 0.6rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+}
+
+/* ---------- Layout ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (min-width: 760px) {
+  .layout {
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  #results-root {
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+/* ---------- Card panels ---------- */
+
+.input-form,
+.results-display {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.input-form {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 1.25rem;
+}
+
+@media (min-width: 520px) {
+  .input-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- Fields ---------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.field input,
+.field select {
+  width: 100%;
+  height: var(--field-height);
+  padding: 0 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--panel);
+  border: 1.5px solid var(--panel-border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field select {
+  /* Custom caret so selects match the inputs across platforms */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7280' d='M1.4 0 6 4.6 10.6 0 12 1.4 6 7.4 0 1.4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  padding-right: 2.25rem;
+  cursor: pointer;
+}
+
+.field input:hover,
+.field select:hover {
+  border-color: #cfd3d8;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-ring);
+}
+
+.field input:focus-visible,
+.field select:focus-visible {
+  outline: none;
+}
+
+/* ---------- Field errors ---------- */
+
+.field-error {
+  display: block;
+  min-height: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--danger);
+}
+
+/* Turn the field red when an error message is present. :has is used
+   progressively — where supported it gives the input a red border and accent;
+   the red error text below is the robust baseline that always applies. */
+.field:has(.field-error:not(:empty)) input,
+.field:has(.field-error:not(:empty)) select {
+  border-color: var(--danger);
+  background-color: var(--danger-soft);
+}
+
+.field:has(.field-error:not(:empty)) input:focus,
+.field:has(.field-error:not(:empty)) select:focus {
+  box-shadow: 0 0 0 4px rgba(217, 45, 32, 0.18);
+}
+
+.field-error:not(:empty) {
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--danger);
+}
+
+/* ---------- Results ---------- */
+
+.results-display {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.results-display::before {
+  content: "Estimated heat output";
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.result {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  background: var(--accent-soft);
+  border: 1px solid #f6ddcb;
+  border-radius: var(--radius-sm);
+}
+
+.result-value {
+  font-size: clamp(2rem, 6vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--accent-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.result-unit {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* The "--" placeholder should read as intentional, not as data. */
+.result-value:is(:empty)::before {
+  content: "--";
+}
+
+.result-value {
+  transition: color 0.15s ease;
+}
+
+/* Muted look when showing the placeholder text. */
+.result:has(.result-value) .result-value {
+  /* default coloured value */
+}
+
+.result-message {
+  margin: 0;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-border);
+  color: var(--warn-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+
+.app-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
+
+/* ---------- Dark mode ---------- */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #ff922b;
+    --accent-strong: #ffa94d;
+    --accent-soft: #2a2019;
+    --accent-ring: rgba(255, 146, 43, 0.32);
+
+    --bg: #14161a;
+    --panel: #1c1f24;
+    --panel-border: #2c313a;
+    --text: #e7eaee;
+    --text-muted: #a1a8b3;
+    --text-faint: #757c88;
+
+    --danger: #ff6b60;
+    --danger-soft: #2a1a1a;
+    --warn-bg: #2c2417;
+    --warn-border: #5a4a2a;
+    --warn-text: #f5c37a;
+
+    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  body {
+    background-image: radial-gradient(
+      1200px 400px at 50% -10%,
+      rgba(255, 146, 43, 0.08),
+      transparent 60%
+    );
+  }
+
+  .result {
+    border-color: #3a2f22;
+  }
+
+  .field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23a1a8b3' d='M1.4 0 6 4.6 10.6 0 12 1.4 6 7.4 0 1.4z'/%3E%3C/svg%3E");
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
