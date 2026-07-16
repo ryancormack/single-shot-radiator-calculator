@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+# Build and publish the static site to GitHub Pages on every push to the
+# default branch. Also allow manual runs from the Actions tab.
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Least-privilege permissions required by the GitHub Pages deployment flow.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent Pages deployment; do not cancel an in-progress
+# run so a running deployment is allowed to finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # The build job produces the static artifact. If it fails, the deploy job
+  # never runs, so nothing is published and the previously deployed site
+  # stays live (Requirement 7.6).
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  # The deploy job publishes the artifact. It depends on a successful build,
+  # so a failed build halts the pipeline before anything is published.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
