@@ -1,0 +1,504 @@
+{
+  "pbtResults": {
+    "3.2 Write property test for room volume": {
+      "status": "passed",
+      "lastRunTimestamp": 1784234925923
+    },
+    "3.3 Write property test for Delta_T": {
+      "status": "passed",
+      "lastRunTimestamp": 1784234927879
+    },
+    "3.5 Write property test for bounded, whole-watt output": {
+      "status": "passed",
+      "lastRunTimestamp": 1784234928902
+    },
+    "3.6 Write property test for BTU/hr conversion": {
+      "status": "passed",
+      "lastRunTimestamp": 1784234929913
+    },
+    "3.7 Write property test for determinism": {
+      "status": "passed",
+      "lastRunTimestamp": 1784234930940
+    },
+    "3.8 Write property test for Delta_T sign behavior": {
+      "status": "passed",
+      "lastRunTimestamp": 1784234931924
+    },
+    "3.9 Write property test for monotonicity in volume": {
+      "status": "passed",
+      "lastRunTimestamp": 1784234932450
+    },
+    "5.2 Write property test for dimension validation": {
+      "status": "passed",
+      "lastRunTimestamp": 1784235029174
+    },
+    "5.3 Write property test for external wall count validation": {
+      "status": "passed",
+      "lastRunTimestamp": 1784235030166
+    },
+    "5.4 Write property test for desired temperature validation": {
+      "status": "passed",
+      "lastRunTimestamp": 1784235031165
+    },
+    "5.5 Write property test that all invalid fields are reported simultaneously": {
+      "status": "passed",
+      "lastRunTimestamp": 1784235032161
+    },
+    "5.6 Write property test that any invalid input withholds the result": {
+      "status": "passed",
+      "lastRunTimestamp": 1784235033135
+    },
+    "8.2 Write property test for room-type default temperature": {
+      "status": "passed",
+      "lastRunTimestamp": 1784235277695
+    },
+    "8.3 Write property test that a manually edited temperature is never overwritten": {
+      "status": "passed",
+      "lastRunTimestamp": 1784235278348
+    }
+  },
+  "executionHistory": {
+    "1. Scaffold the Vite + TypeScript SPA project": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994934
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234018676
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234679419
+      }
+    ],
+    "2.1 Create shared types and the config constants module": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994939
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234133172
+      }
+    ],
+    "3.1 Implement `computeRoomVolume` and `computeDeltaT`": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994943
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234261264
+      }
+    ],
+    "3.4 Implement `computeWatts`, `wattsToBtu`, and `computeHeatOutput`": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994953
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234261834
+      }
+    ],
+    "4. Checkpoint - calculation core": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994957
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235566588
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235706962
+      }
+    ],
+    "5.1 Implement `validateInputs`": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994961
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234450769
+      }
+    ],
+    "6. Checkpoint - validation layer": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994969
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235707953
+      }
+    ],
+    "7.1 Implement the AppState store": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994973
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234687158
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234761302
+      }
+    ],
+    "7.2 Implement the controller pipeline": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994976
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235218033
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235295348
+      }
+    ],
+    "8.1 Implement the Input_Form component": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994986
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235081382
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235204628
+      }
+    ],
+    "8.4 Implement the Results Display component": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994990
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235219074
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235296391
+      }
+    ],
+    "9.1 Implement the composition root": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233994994
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235304474
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235413991
+      }
+    ],
+    "10. Checkpoint - full application wired": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233995004
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235708029
+      }
+    ],
+    "11.1 Create the GitHub Actions deployment workflow": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784233995008
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234687325
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234761987
+      }
+    ],
+    "2. Define domain types and configuration constants": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234133176
+      }
+    ],
+    "3. Implement the pure calculation core": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234261848
+      }
+    ],
+    "5. Implement the validation layer": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234450772
+      }
+    ],
+    "11. Configure GitHub Pages deployment": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234761991
+      }
+    ],
+    "3.2 Write property test for room volume": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234814332
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235054972
+      }
+    ],
+    "5.2 Write property test for dimension validation": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234815316
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235064928
+      }
+    ],
+    "2.2 Write unit test that all documented defaults are members of their option sets": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784234816020
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235053967
+      }
+    ],
+    "3.3 Write property test for Delta_T": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235055971
+      }
+    ],
+    "3.5 Write property test for bounded, whole-watt output": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235057918
+      }
+    ],
+    "3.6 Write property test for BTU/hr conversion": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235058953
+      }
+    ],
+    "3.7 Write property test for determinism": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235059951
+      }
+    ],
+    "3.8 Write property test for Delta_T sign behavior": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235060957
+      }
+    ],
+    "3.9 Write property test for monotonicity in volume": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235061954
+      }
+    ],
+    "3.10 Write unit test for the worked-example vector": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235062962
+      }
+    ],
+    "5.3 Write property test for external wall count validation": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235065904
+      }
+    ],
+    "5.4 Write property test for desired temperature validation": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235066947
+      }
+    ],
+    "5.5 Write property test that all invalid fields are reported simultaneously": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235067965
+      }
+    ],
+    "5.6 Write property test that any invalid input withholds the result": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235068366
+      }
+    ],
+    "8.2 Write property test for room-type default temperature": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235220068
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235297384
+      }
+    ],
+    "8.3 Write property test that a manually edited temperature is never overwritten": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235220384
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235297896
+      }
+    ],
+    "7. Implement state store and controller": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235295352
+      }
+    ],
+    "8. Implement UI components": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235296394
+      }
+    ],
+    "7.3 Write unit test for graceful calculation-failure handling": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235305486
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235414987
+      }
+    ],
+    "8.5 Write example/DOM tests for the Results Display": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235306096
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235415570
+      }
+    ],
+    "9. Compose and wire the application": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235413994
+      }
+    ],
+    "9.2 Write integration/example tests for the full pipeline (jsdom)": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235421171
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235555315
+      }
+    ],
+    "11.2 Write smoke/static checks": [
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235422385
+      },
+      {
+        "executionId": "9c08c2ad-a9bd-4d11-a2d5-ca0862fab363",
+        "chatSessionId": "87501405-244b-4258-b290-f7dc58a7df0e",
+        "timestamp": 1784235555429
+      }
+    ]
+  }
+}
