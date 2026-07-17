@@ -3,26 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Radiator Heat Calculator</title>
+    <title>Radiator &amp; Air Conditioning Calculator</title>
   </head>
   <body>
     <div class="app">
       <header class="app-header">
-        <h1>Radiator Heat Calculator</h1>
+        <h1>Heating &amp; Cooling Calculator</h1>
         <p class="tagline">
-          Estimate the heat output your room needs so you can size radiators
-          with confidence — enter the room dimensions and details to see the
-          required output in watts and BTU/hr.
+          Size your room's heating and cooling in one place — enter the room
+          dimensions and details to see the radiator heat output you need in
+          winter and the air conditioning capacity you need in summer.
         </p>
       </header>
 
-      <main class="layout">
-        <div id="form-root"></div>
-        <div id="results-root"></div>
-      </main>
+      <section class="calculator" aria-labelledby="heating-heading">
+        <h2 id="heating-heading" class="section-heading">Radiator heat output</h2>
+        <p class="section-intro">
+          The heat output your room needs so you can size radiators with
+          confidence, in watts and BTU/hr.
+        </p>
+        <main class="layout">
+          <div id="form-root"></div>
+          <div id="results-root"></div>
+        </main>
+      </section>
+
+      <section class="calculator" aria-labelledby="cooling-heading">
+        <h2 id="cooling-heading" class="section-heading">Air conditioning capacity</h2>
+        <p class="section-intro">
+          The cooling capacity the internal unit of a standard split-system
+          (external pump style) air conditioner needs to cool your room in hot
+          weather, in watts, kW and BTU/hr — with a recommended standard unit
+          size.
+        </p>
+        <main class="layout">
+          <div id="cooling-form-root"></div>
+          <div id="cooling-results-root"></div>
+        </main>
+      </section>
 
       <footer class="app-footer">
-        <p>Estimates only — always confirm sizing with a heating professional.</p>
+        <p>Estimates only — always confirm sizing with a heating or cooling professional.</p>
       </footer>
     </div>
     <script type="module" src="/src/main.ts"></script>
