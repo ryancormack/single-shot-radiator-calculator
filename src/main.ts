@@ -27,6 +27,10 @@ import { createStore } from './state/store';
 import { createController } from './state/controller';
 import { renderForm } from './ui/inputForm';
 import { renderResults } from './ui/resultsDisplay';
+import { createCoolingStore } from './state/coolingStore';
+import { createCoolingController } from './state/coolingController';
+import { renderCoolingForm } from './ui/coolingInputForm';
+import { renderCoolingResults } from './ui/coolingResultsDisplay';
 
 /**
  * Bootstrap the application: locate the mount points, wire the layers, and
@@ -36,13 +40,21 @@ import { renderResults } from './ui/resultsDisplay';
 function bootstrap(): void {
   const formRoot = document.querySelector<HTMLElement>('#form-root');
   const resultsRoot = document.querySelector<HTMLElement>('#results-root');
+  const coolingFormRoot = document.querySelector<HTMLElement>('#cooling-form-root');
+  const coolingResultsRoot = document.querySelector<HTMLElement>('#cooling-results-root');
 
   if (!formRoot || !resultsRoot) {
     throw new Error(
       'Mount containers not found: expected #form-root and #results-root in index.html.',
     );
   }
+  if (!coolingFormRoot || !coolingResultsRoot) {
+    throw new Error(
+      'Mount containers not found: expected #cooling-form-root and #cooling-results-root in index.html.',
+    );
+  }
 
+  // --- Heating (radiator) calculator ---------------------------------------
   // Create the application state store (seeded with documented defaults) and
   // the controller that drives the validate -> calculate -> state pipeline.
   const store = createStore();
@@ -61,10 +73,28 @@ function bootstrap(): void {
   // Re-render whenever the state changes.
   store.subscribe(render);
 
-  // Initial render so the form shows immediately on load, before any valid
-  // calculation has been produced. The Results Display shows placeholders until
-  // valid inputs yield a result (Requirements 5.5, 6.5).
+  // --- Cooling (air conditioning) calculator -------------------------------
+  // The cooling calculator has its own independent store and controller but
+  // uses the identical validate -> calculate -> render-in-place pipeline.
+  const coolingStore = createCoolingStore();
+  const coolingController = createCoolingController(coolingStore);
+
+  const renderCooling = (state = coolingStore.getState()): void => {
+    renderCoolingForm(coolingFormRoot, state, (raw) =>
+      coolingController.handleInputChange(raw),
+    );
+    renderCoolingResults(coolingResultsRoot, state.result, {
+      unavailable: state.resultUnavailable,
+    });
+  };
+
+  coolingStore.subscribe(renderCooling);
+
+  // Initial render so both forms show immediately on load, before any valid
+  // calculation has been produced. Each Results Display shows placeholders
+  // until valid inputs yield a result (Requirements 7.6, 8.6, and heating 5.5/6.5).
   render();
+  renderCooling();
 }
 
 bootstrap();

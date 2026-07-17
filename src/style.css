@@ -359,3 +359,69 @@ body {
     transition: none !important;
   }
 }
+
+
+/* ---------- Calculator sections (heating + cooling) ---------- */
+
+.calculator {
+  margin-top: 2rem;
+}
+
+.calculator:first-of-type {
+  margin-top: 0;
+}
+
+.section-heading {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.section-intro {
+  margin: 0 0 1rem;
+  max-width: 60ch;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Override the results panel caption for the cooling calculator. The base
+   `.results-display::before` sets "Estimated heat output"; this rule comes
+   later in source order so it wins for the cooling panel. */
+.cooling-results::before {
+  content: "Estimated cooling capacity";
+}
+
+/* The cooling calculator uses a cool blue accent for its result values to
+   distinguish it visually from the warm heating panel. */
+.cooling-results .result {
+  background: #eaf4fb;
+  border-color: #cfe6f5;
+}
+
+.cooling-results .result-value {
+  color: #0b6aa2;
+}
+
+/* Informational note (e.g. capacity exceeds a single standard unit). */
+.result-note {
+  margin: 0;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-border);
+  color: var(--warn-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cooling-results .result {
+    background: #16242e;
+    border-color: #244457;
+  }
+
+  .cooling-results .result-value {
+    color: #6fc2ee;
+  }
+}
